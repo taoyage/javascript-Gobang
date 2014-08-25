@@ -1,0 +1,285 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
+.piece {
+  display: block;
+  height: 34px;
+  width: 34px;
+  z-index: 0;
+  position: relative;
+  -moz-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.45);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.45);
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
+  position: absolute;
+  z-index: 99; }
+  .piece:before {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 20px;
+    z-index: 1;
+    -webkit-border-radius: 10px/6px;
+    -moz-border-radius: 10px/6px;
+    border-radius: 10px/6px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    -o-transform: rotate(-35deg);
+    transform: rotate(-35deg); }
+  .piece:after {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 20px;
+    z-index: 1;
+    -webkit-border-radius: 10px/6px;
+    -moz-border-radius: 10px/6px;
+    border-radius: 10px/6px;
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    -o-transform: rotate(-35deg);
+    transform: rotate(-35deg); }
+  .piece i {
+    content: "";
+    display: block;
+    height: 33px;
+    width: 33px;
+    z-index: 2;
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    _display: none; }
+  .piece.black {
+    background: url(images/black.png) no-repeat left top;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.95); }
+    .piece.black:before {
+      background: -webkit-gradient(linear, 50% 0, 50% 100%, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.02)));
+      background: -webkit- linear-gradient(-90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.02));
+      background: -moz- linear-gradient(-90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.02));
+      background: -o- linear-gradient(-90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.02));
+      background: linear-gradient(-90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.02)); }
+    .piece.black:after {
+      background: -webkit-gradient(linear, 50% 0, 50% 100%, from(rgba(255, 255, 255, 0.01)), to(rgba(255, 255, 255, 0.15)));
+      background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0.01)), to(rgba(255, 255, 255, 0.15)));
+      background: -webkit- linear-gradient(-90deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.15));
+      background: -moz- linear-gradient(-90deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.15));
+      background: -o- linear-gradient(-90deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.15));
+      background: linear-gradient(-90deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.15)); }
+    .piece.black i {
+      background: -webkit-gradient(linear, 50% 0, 50% 100%, from(rgba(255, 255, 255, 0.32)), color-stop(rgba(255, 255, 255, 0.01), 0.65), to(rgba(255, 255, 255, 0.01)));
+      background: -webkit- linear-gradient(-90deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.01) 65%, rgba(255, 255, 255, 0.01));
+      background: -moz- linear-gradient(-90deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.01) 65%, rgba(255, 255, 255, 0.01));
+      background: -o- linear-gradient(-90deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.01) 65%, rgba(255, 255, 255, 0.01));
+      background: linear-gradient(-90deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.01) 65%, rgba(255, 255, 255, 0.01)); }
+  .piece.white {
+    background: url(images/white.png) no-repeat left top;
+    border: none;
+    background: #cacaca;
+    border: 1px solid rgba(0, 0, 0, 0.35); }
+    .piece.white:before {
+      background: -webkit-gradient(linear, 50% 0, 50% 100%, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.2)));
+      background: -webkit- linear-gradient(-90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+      background: -moz- linear-gradient(-90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+      background: -o- linear-gradient(-90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+      background: linear-gradient(-90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2)); }
+    .piece.white:after {
+      background: -webkit-gradient(linear, 50% 0, 50% 100%, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.2)));
+      background: -webkit- linear-gradient(-90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+      background: -moz- linear-gradient(-90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+      background: -o- linear-gradient(-90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+      background: linear-gradient(-90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2)); }
+    .piece.white i {
+      background: -webkit-gradient(linear, 50% 0, 50% 100%, from(rgba(255, 255, 255, 0.65)), color-stop(rgba(255, 255, 255, 0.15), 0.65), to(rgba(255, 255, 255, 0.01)));
+      background: -webkit- linear-gradient(-90deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.15) 65%, rgba(255, 255, 255, 0.01));
+      background: -moz- linear-gradient(-90deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.15) 65%, rgba(255, 255, 255, 0.01));
+      background: -o- linear-gradient(-90deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.15) 65%, rgba(255, 255, 255, 0.01));
+      background: linear-gradient(-90deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.15) 65%, rgba(255, 255, 255, 0.01)); }
+
+.chessboardBox {
+  float: left;
+  position: relative;
+  left: 250px;
+  top: 40px;
+  padding: 30px;
+  background: #f0c287;
+  border: 4px double #5a3405;
+  -moz-box-shadow: inset 0px 0px 5px rgba(89, 51, 4, 0.6);
+  -webkit-box-shadow: inset 0px 0px 5px rgba(89, 51, 4, 0.6);
+  box-shadow: inset 0px 0px 5px rgba(89, 51, 4, 0.6);
+  height: 575px;
+  width: 575px; }
+  .chessboardBox:after {
+    -moz-box-shadow: 0px 0px 5px #593304;
+    -webkit-box-shadow: 0px 0px 5px #593304;
+    box-shadow: 0px 0px 5px #593304; }
+  .chessboardBox .chessboard {
+    border: 1px solid #3c271b;
+    border: 1px solid rgba(15, 0, 0, 0.8);
+    border-bottom: none;
+    border-right: none;
+    position: absolute;
+    left: 30px;
+    top: 30px; }
+    .chessboardBox .chessboard td {
+      height: 40px;
+      width: 40px;
+      border: 1px solid #3c271b;
+      border: 1px solid rgba(15, 0, 0, 0.8);
+      border-left: none;
+      border-top: none;
+      display: block;
+      float: left;
+      position: relative;
+      line-height: 40px;
+      text-align: center;
+      color: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      text-indent: 100px; }
+      .chessboardBox .chessboard td:after {
+        content: "";
+        height: 38px;
+        width: 38px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        border: 1px solid rgba(255, 255, 255, 0.4); }
+  .chessboardBox .Box {
+    height: 615px;
+    width: 615px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 3; }
+    .chessboardBox .Box i {
+      display: block;
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      cursor: pointer;
+      line-height: 40px;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.2);
+      text-indent: 100px;
+      /* border:1px solid red;*/
+      overflow: hidden;
+      /*    &:hover{
+            width:40px;
+            height:40px;
+            border:1px solid red;
+          } */ }
+
+.ButtonBox {
+  float: left;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  left: 300px;
+  top: 270px; }
+  .ButtonBox button {
+    margin-top: 30px;
+    cursor: pointer;
+    border: 0px solid #3c6075;
+    background: #328079;
+    background: -webkit- linear-gradient(top, #dae6e4, #328079);
+    background: -moz- linear-gradient(top, #dae6e4, #328079);
+    background: -o- linear-gradient(top, #dae6e4, #328079);
+    background: linear-gradient(top, #dae6e4, #328079);
+    background: -webkit-gradient(linear, left top, left bottom, from(#dae6e4), to(#328079));
+    background-image: -ms-linear-gradient(top, #dae6e4 0%, #328079 100%);
+    padding: 12px 24px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 0px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 0px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 0px 0, inset rgba(255, 255, 255, 0.4) 0 1px 0;
+    text-shadow: #7ea4bd 0 1px 0;
+    color: #d1dce3;
+    font-size: 17px;
+    font-family: helvetica, serif;
+    text-decoration: none;
+    vertical-align: middle; }
+    .ButtonBox button:hover {
+      text-shadow: #1e4158 0 1px 0;
+      background: #3e779d;
+      background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
+      background: -webkit- -o-linear-gradient(top, #65a9d7, #3e779d);
+      background: -moz- -o-linear-gradient(top, #65a9d7, #3e779d);
+      background: -o- -o-linear-gradient(top, #65a9d7, #3e779d);
+      background: -o-linear-gradient(top, #65a9d7, #3e779d);
+      background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
+      color: #fff; }
+
+.mouseBox {
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  cursor: pointer; }
+
+.mouseP {
+  height: 5px;
+  width: 5px;
+  border: 1px solid #f00;
+  position: absolute;
+  display: block;
+  cursor: pointer; }
+
+.mouseLT {
+  border-right: none;
+  border-bottom: none;
+  left: 0px;
+  top: 0px;
+  cursor: pointer; }
+
+.mouseRT {
+  border-left: none;
+  border-bottom: none;
+  right: 0px;
+  top: 0px;
+  cursor: pointer; }
+
+.mouseLB {
+  border-right: none;
+  border-top: none;
+  left: 0px;
+  bottom: 0px;
+  cursor: pointer; }
+
+.mouseRB {
+  border-left: none;
+  border-top: none;
+  right: 0px;
+  bottom: 0px;
+  cursor: pointer; }
+
+/*i:hover{
+       background:url(http://sandbox.runjs.cn/uploads/rs/102/r2dy3tyw/hover_up.png) no-repeat 1px 1px; 
+       }*/
+/*
+<!--  <div class="mouseBox">
+    <i class="mouseP mouseLT"></i>
+    <i class="mouseP mouseRT"></i>
+    <i class="mouseP mouseLB"></i>
+    <i class="mouseP mouseRB"></i>
+    </div> -->*/
